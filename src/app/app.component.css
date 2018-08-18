@@ -1,0 +1,33 @@
+.nav{
+    background: #333;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px;
+}
+
+.nav .logo{
+    font-size: 20px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #aaa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table th{
+    background: #0af;
+    color: #fff;
+}
+
+table td, table th{
+    border: 1px solid #aaa;
+    text-align: left;
+    padding: 5px;
+}
+
+table td{
+    word-break: break-all;
+    width: 250px;
+}
