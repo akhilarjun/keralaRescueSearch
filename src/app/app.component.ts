@@ -44,4 +44,8 @@ export class AppComponent implements OnInit{
     this.currentPageNumber && this.currentPageNumber--;
     this.loadData(this.currentPageNumber);
   }
+
+  public jumpToPage = function(pageNum: number){
+    this.loadData(--pageNum);
+  }
 }

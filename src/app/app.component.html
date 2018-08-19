@@ -1,37 +1,57 @@
 <div class="nav">
   <div class="logo">Kerala Rescue Connect</div>
 </div>
-<div class="container">
-  <div class="table-holder">
-    <table class="with-border show-hover highlight-active">
-      <caption>Master Data</caption>
-      <thead>
-        <tr>
-          <th class="tab-hide">District</th>
-          <th>Location</th>
-          <th class="tab-hide">Requestee</th>
-          <th>Contact</th>
-          <th>Date Added</th>
-          <th>Extra Labels</th>
-        </tr>
-      </thead>
-      <tbody>
-            <tr *ngFor="let data of rescueData">
-              <td class="tab-hide">{{data.district_full_s}}</td>
-              <td>{{data.dist_place_t}}</td>
-              <td class="tab-hide">{{data.requestee_t}}</td>
-              <td>{{data.requestee_phone_t}}</td>
-              <td>{{data.last_modified[0] | date:short}}</td>
-              <td></td>
-            </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="paginate">
-    <button (click)="loadData(0)" class="" [ngClass] = "{'disabled_hide': currentPageNumber == 0}">First</button>
-    <button (click)="loadPreviousPage()" class="" [ngClass] = "{'disabled_hide': currentPageNumber == 0}">Previous</button>
-    <button (click)="loadNextPage()" class=""  [ngClass] = "{'disabled_hide': currentPageNumber == paginatorQuota}">Next</button>
-    <button (click)="loadData(paginatorQuota)" class=""  [ngClass] = "{'disabled_hide': currentPageNumber == paginatorQuota}">Last</button>
+<div class="container wide-screen">
+  <div class="fixed-row">
+    <div class="grid-cell-d-10 grid-cell-t-10 grid-cell-m-10">
+        <div class="table-holder">
+          <table class="with-border show-hover">
+            <thead>
+              <tr>
+                <th class="tab-hide">District</th>
+                <th class="wide">Location</th>
+                <th class="tab-hide">Requestee</th>
+                <th>Contact</th>
+                <th>Date Added</th>
+                <th class="tab-hide">Extra Labels</th>
+              </tr>
+            </thead>
+            <tbody>
+                  <tr *ngFor="let data of rescueData">
+                    <td class="tab-hide">{{data.district_full_s}}</td>
+                    <td class="wide">
+                      <div class="fixed-row">
+                        <div class="grid-cell-d-10 grid-cell-t-8 grid-cell-m-8">{{data.dist_place_t}}</div>
+                        <div class="grid-cell-d-2 grid-cell-t-4 grid-cell-m-4 text-center">
+                          <div class="pill">Locate</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="tab-hide">{{data.requestee_t}}</td>
+                    <td>{{data.requestee_phone_t}}</td>
+                    <td>{{data.last_modified[0] | date:short}}</td>
+                    <td class="tab-hide"></td>
+                  </tr>
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="paginate flex-row tab-v">
+          <div class="grid-cell">
+            <button (click)="loadData(0)" class="" [ngClass] = "{'disabled_hide': currentPageNumber == 0}">First</button>
+            <button (click)="loadPreviousPage()" class="" [ngClass] = "{'disabled_hide': currentPageNumber == 0}">Previous</button>
+            <button (click)="loadNextPage()" class=""  [ngClass] = "{'disabled_hide': currentPageNumber == paginatorQuota}">Next</button>
+            <button (click)="loadData(paginatorQuota)" class=""  [ngClass] = "{'disabled_hide': currentPageNumber == paginatorQuota}">Last</button>
+            <div class="inline-block jump-to-page">
+              <input type="text" name="pageNumber" id="" [(ngModel)]="pageNumToJump" placeholder="Go To">
+              <button (click)="jumpToPage(pageNumToJump)">Go</button>
+            </div>
+          </div>
+          <div class="grid-cell help-info">
+            Page {{currentPageNumber+1}} of {{paginatorQuota}}
+          </div>
+        </div>
+    </div>
+    <div class="grid-cell-d-2 grid-cell-t-2 grid-cell-m-2"></div>
   </div>
 </div>

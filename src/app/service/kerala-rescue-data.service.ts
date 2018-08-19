@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,11 @@ export class KeralaRescueDataService {
   public fetchDataFromKeralaRescueIn(page:number){
     //https://recipe-solr.websurfed.com/solr/krescue10/select?q=*:*
     //assets/data/data-keralaRescueIn.json
-    return this.http.get('https://recipe-solr.websurfed.com/solr/krescue10/select?q=*:*&start='+page+'&rows=10&sort=last_modified%20desc');
+    const params = new HttpParams()
+                    .append("q","*:*")
+                    .append("start",""+page)
+                    .append("rows","10")
+                    .append("sort","last_modified desc");
+    return this.http.get('https://recipe-solr.websurfed.com/solr/krescue10/select', {params: params});
   }
 }
