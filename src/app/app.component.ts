@@ -47,6 +47,10 @@ export class AppComponent implements OnInit{
   }
 
   public jumpToPage = function(pageNum: number){
-    this.loadData(--pageNum);
+    pageNum && Number(pageNum) && this.loadData(--pageNum);
+  }
+
+  public openTab = function(latLong: any){
+    window.open("https://maps.google.com/?q="+latLong);
   }
 }

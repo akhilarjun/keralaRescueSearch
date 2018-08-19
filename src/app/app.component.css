@@ -72,13 +72,21 @@ td.wide{
 
 .jump-to-page input{
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #DEB841;
     outline: none;
     width: 80px;
+    margin-right: -1px;
+}
+
+button.spcl{
+    background: #DEB841;
+    color: #333;
+    border: 1px solid #DEB841;
+    font-weight: bold;
 }
 
 /*Tab*/
 @media screen and (max-width: 768px) {
     .tab-hide{display:none;}
-    .paginate .help-info{text-align: left;}
+    .paginate .help-info{text-align: left;margin-top: 15px;}
 }

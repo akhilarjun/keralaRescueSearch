@@ -3,7 +3,7 @@
 </div>
 <div class="container wide-screen">
   <div class="fixed-row">
-    <div class="grid-cell-d-10 grid-cell-t-10 grid-cell-m-10">
+    <div class="grid-cell-d-10 grid-cell-t-10 grid-cell-m-12">
         <div class="table-holder">
           <table class="with-border show-hover">
             <thead>
@@ -23,7 +23,7 @@
                       <div class="fixed-row">
                         <div class="grid-cell-d-10 grid-cell-t-8 grid-cell-m-8">{{data.dist_place_t}}</div>
                         <div class="grid-cell-d-2 grid-cell-t-4 grid-cell-m-4 text-center">
-                          <div class="pill">Locate</div>
+                          <div class="pill" (click)="openTab(data.location_str[0])">Locate</div>
                         </div>
                       </div>
                     </td>
@@ -44,7 +44,7 @@
             <button (click)="loadData(paginatorQuota)" class=""  [ngClass] = "{'disabled_hide': currentPageNumber == paginatorQuota}">Last</button>
             <div class="inline-block jump-to-page">
               <input type="text" name="pageNumber" id="" [(ngModel)]="pageNumToJump" placeholder="Go To">
-              <button (click)="jumpToPage(pageNumToJump)">Go</button>
+              <button (click)="jumpToPage(pageNumToJump)" class="spcl">Go</button>
             </div>
           </div>
           <div class="grid-cell help-info">
@@ -52,6 +52,6 @@
           </div>
         </div>
     </div>
-    <div class="grid-cell-d-2 grid-cell-t-2 grid-cell-m-2"></div>
+    <div class="grid-cell-d-2 grid-cell-t-2 grid-cell-m-12"></div>
   </div>
 </div>
