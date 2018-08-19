@@ -8,9 +8,9 @@ export class KeralaRescueDataService {
 
   constructor(private http: HttpClient) { }
 
-  public fetchDataFromKeralaRescueIn(){
+  public fetchDataFromKeralaRescueIn(page:number){
     //https://recipe-solr.websurfed.com/solr/krescue10/select?q=*:*
     //assets/data/data-keralaRescueIn.json
-    return this.http.get('https://recipe-solr.websurfed.com/solr/krescue10/select?q=*:*');
+    return this.http.get('https://recipe-solr.websurfed.com/solr/krescue10/select?q=*:*&start='+page+'&rows=10&sort=last_modified%20desc');
   }
 }

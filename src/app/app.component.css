@@ -9,25 +9,34 @@
     font-size: 20px;
 }
 
-table{
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #aaa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.table-holder{
+    overflow: auto;
 }
 
-table th{
-    background: #0af;
-    color: #fff;
-}
-
-table td, table th{
-    border: 1px solid #aaa;
-    text-align: left;
-    padding: 5px;
-}
-
-table td{
-    word-break: break-all;
+td,th{
+    text-transform: capitalize;
     width: 250px;
+}
+
+@media screen and (max-width: 600px) {
+    .tab-hide{display:none;}
+}
+
+button.disabled_hide{
+    cursor: not-allowed;
+    pointer-events: none;
+    background: #eee;
+    color: #aaa;
+    border: 1px solid #aaa;
+    outline: none;
+}
+
+.paginate{
+    margin: 5px 0;
+}
+
+.paginate button{
+    margin: 0;
+    margin-right: -1px;
+    outline: none;
 }

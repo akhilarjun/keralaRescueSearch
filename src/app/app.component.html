@@ -1,30 +1,37 @@
 <div class="nav">
   <div class="logo">Kerala Rescue Connect</div>
 </div>
-
-<!--div *ngFor="let data of rescueData">
-  {{data.district}} -- {{data.location}} -- {{data.requestee}} -- {{data.requestee_phone}} -- {{data.dateadded | date:short}}
-</div-->
-
-<table>
-  <thead>
-    <tr>
-      <th>District</th>
-      <th>Location</th>
-      <th>Requestee</th>
-      <th>Contact</th>
-      <th>Date Added</th>
-      <th>Extra Labels</th>
-    </tr>
-  </thead>
-  <tbody>
-        <tr *ngFor="let data of rescueData">
-          <td>{{data.district_full_s}}</td>
-          <td>{{data.dist_place_t}}</td>
-          <td>{{data.requestee_t}}</td>
-          <td>{{data.requestee_phone_t}}</td>
-          <td>{{data.last_modified[0] | date:short}}</td>
-          <td></td>
+<div class="container">
+  <div class="table-holder">
+    <table class="with-border show-hover highlight-active">
+      <caption>Master Data</caption>
+      <thead>
+        <tr>
+          <th class="tab-hide">District</th>
+          <th>Location</th>
+          <th class="tab-hide">Requestee</th>
+          <th>Contact</th>
+          <th>Date Added</th>
+          <th>Extra Labels</th>
         </tr>
-  </tbody>
-</table>
+      </thead>
+      <tbody>
+            <tr *ngFor="let data of rescueData">
+              <td class="tab-hide">{{data.district_full_s}}</td>
+              <td>{{data.dist_place_t}}</td>
+              <td class="tab-hide">{{data.requestee_t}}</td>
+              <td>{{data.requestee_phone_t}}</td>
+              <td>{{data.last_modified[0] | date:short}}</td>
+              <td></td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="paginate">
+    <button (click)="loadData(0)" class="" [ngClass] = "{'disabled_hide': currentPageNumber == 0}">First</button>
+    <button (click)="loadPreviousPage()" class="" [ngClass] = "{'disabled_hide': currentPageNumber == 0}">Previous</button>
+    <button (click)="loadNextPage()" class=""  [ngClass] = "{'disabled_hide': currentPageNumber == paginatorQuota}">Next</button>
+    <button (click)="loadData(paginatorQuota)" class=""  [ngClass] = "{'disabled_hide': currentPageNumber == paginatorQuota}">Last</button>
+  </div>
+</div>
