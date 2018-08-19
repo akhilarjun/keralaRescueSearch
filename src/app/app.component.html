@@ -19,11 +19,11 @@
   </thead>
   <tbody>
         <tr *ngFor="let data of rescueData">
-          <td>{{data.district}}</td>
-          <td>{{data.location}}</td>
-          <td>{{data.requestee}}</td>
-          <td>{{data.requestee_phone}}</td>
-          <td>{{data.dateadded | date:short}}</td>
+          <td>{{data.district_full_s}}</td>
+          <td>{{data.dist_place_t}}</td>
+          <td>{{data.requestee_t}}</td>
+          <td>{{data.requestee_phone_t}}</td>
+          <td>{{data.last_modified[0] | date:short}}</td>
           <td></td>
         </tr>
   </tbody>

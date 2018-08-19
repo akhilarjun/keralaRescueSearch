@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
   ngOnInit(){
     this.dataService.fetchDataFromKeralaRescueIn().subscribe(
       data => {
-        this.rescueData = data;
+        this.rescueData = data['response']['docs'];
       }
     );
   }
