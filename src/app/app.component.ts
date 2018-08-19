@@ -15,6 +15,7 @@ export class AppComponent implements OnInit{
   public paginatorQuota: number;
   public currentPageNumber: number = 0;
   public paginatorButtons = new Array(10).fill(0);
+  public pageNumToJump;
 
   public loadData(currPage:number){
     this.currentPageNumber = currPage;
