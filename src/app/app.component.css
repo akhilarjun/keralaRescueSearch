@@ -85,6 +85,24 @@ button.spcl{
     font-weight: bold;
 }
 
+.note.error:after{
+    content: "Fatal Error";
+}
+.note.error{
+    padding-left: 90px;
+}
+
+.hideIt{
+    display: none;
+}
+
+.loader{
+    position: fixed;
+    height: 100%; width: 100%;
+    background: #fff;
+    z-index: 999999999;
+}
+
 /*Tab*/
 @media screen and (max-width: 768px) {
     .tab-hide{display:none;}

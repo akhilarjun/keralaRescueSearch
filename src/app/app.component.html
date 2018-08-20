@@ -1,8 +1,12 @@
+<div class="loader" [ngClass]="{'hideIt': dataLoaded}"></div>
 <div class="nav">
   <div class="logo">Kerala Rescue Connect</div>
 </div>
 <div class="container wide-screen">
-  <div class="fixed-row">
+  <div class="note error"  [ngClass]="{'hideIt': !errorMsg}">
+      {{errorMsg}}
+  </div> 
+  <div class="fixed-row" [ngClass]="{'hideIt': rescueData.length == 0}">
     <div class="grid-cell-d-10 grid-cell-t-10 grid-cell-m-12">
         <div class="table-holder">
           <table class="with-border show-hover">
